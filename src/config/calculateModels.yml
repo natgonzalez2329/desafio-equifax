@@ -1,0 +1,18 @@
+ - id: calculate-models
+   dependencies: filter-clients
+   stepName: Calculate Client Models
+   mainClass: com.company.namespace.CalculateModels
+   config:
+     recordClass: com.company.data.client.laborafax
+     models:
+       - predictScore:
+           model: scoreCredit
+           factor1: 0
+           factor2: 999
+           threshold: 0.4
+       - predictFraud:
+           model: clientFraud
+           criteria: debtLevel
+           predictionType: personalInformation
+
+

@@ -1,0 +1,20 @@
+ - id: output-handler
+   dependencies: evaluate-conditions
+   stepName: Generate Client Output
+   mainClass: com.company.namespace.outputHandler
+   config:
+     recordClass: com.company.data.client.clientOutput
+     format: csv
+     fields:
+     - mapping: laborafax.firstName
+       position: 0
+     - mapping: laborafax.lastName
+       position: 1
+     - mapping: laborafax.calculated.predictedScore
+       position: 2
+     - mapping: laborafax.calculated.predictedRisk
+       position: 3
+     - mapping: laborafax.calculated.outputDecision
+       position: 4
+     - mapping: laborafax.calculated.runDate
+       position: 5
