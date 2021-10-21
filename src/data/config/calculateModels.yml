@@ -10,9 +10,9 @@
            factor1: 0
            factor2: 999
            threshold: 0.4
-       - predictFraud:
-           model: clientFraud
-           criteria: debtLevel
-           predictionType: personalInformation
-
+       - predictScore1:
+           model: scoreCredit
+           factor1: 0
+           factor2: 999
+           threshold: 0.4
 
