@@ -5,6 +5,19 @@ import EditPluginList from "./components/EditPluginList";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+const YAMLtoJSON  = (yml) =>{
+  fetch(yml)
+  .then(res => res.blob())
+  .then(blob => blob.text())
+  .then(yamlAsString => {
+    console.log('yaml res:', yamlAsString)
+    const str = JSON.stringify (yamlAsString);
+    console.log(str);
+  }).catch(err => console.log('yaml err:', err))
+}
+
+YAMLtoJSON('assets/config/calculateModels.yml')
+
 function App() {
   return (
     <div className="App content-fluid">
