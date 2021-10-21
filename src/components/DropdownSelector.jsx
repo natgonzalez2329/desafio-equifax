@@ -9,9 +9,9 @@ const DropdownSelector = () => {
     { name: "English", value: "en" },
     { name: "Chino", value: "ch" },
     { name: "Portuges", value: "pr" },
-    {
-      items: [{ name: "Spanish", value: "es" }],
-    },
+    // {
+    //   items: [{ name: "Spanish", value: "es" }],
+    // },
   ];
   return (
     <SelectSearch
