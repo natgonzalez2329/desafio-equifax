@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div>
-      footer
+     aqui va el footer que se deberia ver blanco
     </div>
   )
 }
