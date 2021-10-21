@@ -1,7 +1,7 @@
 import React from "react";
 import SelectSearch from "react-select-search";
 import { fuzzySearch } from "react-select-search";
-import "./DropdownSelector.css";
+import "../styles/DropdownSelector.css";
 
 const DropdownSelector = () => {
   const options = [
