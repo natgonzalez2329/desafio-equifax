@@ -17,11 +17,5 @@ const YAMLtoJSON  = (yml) =>{
   }).catch(err => console.log('yaml err:', err))
 }
 
-/* YAMLtoJSON('../../home/user/config/calculateModels.yml');
-YAMLtoJSON('../../home/user/config/dataEnricher.yml');
-YAMLtoJSON('../../home/user/config/evaluateConditions.yml');
-YAMLtoJSON('../../home/user/config/filterClients.yml');
-YAMLtoJSON('../../home/user/config/inputHandler.yml');
-YAMLtoJSON('../../home/user/config/keyFinder.yml');
-YAMLtoJSON('../../home/user/config/outputHandler.yml'); */
+
 export default YAMLtoJSON;
