@@ -29,7 +29,7 @@ YAMLtoJSON('../../home/user/config/calculateModels.yml')
 function App() {
   return (
     <div className="App content-fluid">
-      <div className="row">
+      <div className="row-sm">
         <Header />
       </div>
       <div className="row">
