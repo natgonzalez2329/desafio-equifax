@@ -7,7 +7,6 @@ import { nanoid } from 'nanoid';
 
 const DropdownSelector = ({ listPlugin, setListPlugin }) => {
 
-
   const options = [
     { name: "Calculate Models", value: 'calculate-models' },
     { name: "Data Enricher", value: 'data-enricher' },
@@ -32,10 +31,6 @@ const DropdownSelector = ({ listPlugin, setListPlugin }) => {
     })
   } 
 
-
-
-  
-
   return (
     <SelectSearch
       options={options}
@@ -46,4 +41,5 @@ const DropdownSelector = ({ listPlugin, setListPlugin }) => {
     />
   );
 };
+
 export default DropdownSelector;
