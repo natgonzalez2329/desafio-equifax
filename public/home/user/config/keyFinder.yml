@@ -1,0 +1,11 @@
+ - id: key-finder
+   dependencies: input-handler
+   stepName: Data parser step
+   mainClass: com.company.namespace.KeyFinder
+   config:
+    recordClass: com.company.data.client.laborafax
+    source: laborafax.ip.finder.com
+    port:   1234
+    credentials:
+      certificate: laborafax.certificate.ssl
+      clientKey: client.laborafax.client.pkey
