@@ -5,10 +5,10 @@ import "../styles/DropdownSelector.css";
 
 const DropdownSelector = () => {
   const options = [
-    { name: "Plugin 1", value: "sv" },
-    { name: "Plugin 2", value: "en" },
-    { name: "Plugin 3", value: "ch" },
-    { name: "Plugin 4", value: "pr" },
+    { name: "Plugin 1", value: "plugin1" },
+    { name: "Plugin 2", value: "plugin2" },
+    { name: "Plugin 3", value: "plugin3" },
+    { name: "Plugin 4", value: "plugin4" },
     // {
     //   items: [{ name: "Spanish", value: "es" }],
     // },
@@ -19,6 +19,7 @@ const DropdownSelector = () => {
       search
       filterOptions={fuzzySearch}
       placeholder="Select a plugin"
+      onChange={(e)=>console.log(e)}
     />
   );
 };
