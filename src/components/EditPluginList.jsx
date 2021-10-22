@@ -18,7 +18,7 @@ const EditPluginList = ({ listPlugin }) => {
         { listPlugin.length === 0 ? (
           <h1 className="text-center fst-italic text-black-50">Add a new plugin.</h1>
         ): (
-        listPlugin.map((plugin) => ( <button key={plugin.uid}>{plugin.stepName}</button>))
+        listPlugin.map((plugin) => ( <button key={plugin.uid}>{plugin.id}</button>))
         )}
         </ul>
       <button onClick={() => createYaml()}>CREATE</button>
