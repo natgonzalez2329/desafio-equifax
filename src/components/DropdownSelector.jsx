@@ -2,24 +2,39 @@ import React from "react";
 import SelectSearch from "react-select-search";
 import { fuzzySearch } from "react-select-search";
 import "../styles/DropdownSelector.css";
-import YAMLtoJSON from "../data/dataYml"
+import { data } from "../data/dataYml";
+import { nanoid } from 'nanoid';
 
-const DropdownSelector = () => {
+const DropdownSelector = ({ listPlugin, setListPlugin }) => {
+
+
   const options = [
-    { name: "Calculate Models", value: '../../home/user/config/calculateModels.yml' },
-    { name: "Data Enricher", value: '../../home/user/config/dataEnricher.yml' },
-    { name: "Eval Conditions", value: '../../home/user/config/evaluateConditions.yml' },
-    { name: "Filter Clients", value: '../../home/user/config/filterClients.yml' },
-    { name: "Input Handler", value: '../../home/user/config/inputHandler.yml' },
-    { name: "Key Finder", value: '../../home/user/config/keyFinder.yml' },
-    { name: "Output Handler", value: '../../home/user/config/outputHandler.yml' }
+    { name: "Calculate Models", value: 'calculate-models' },
+    { name: "Data Enricher", value: 'data-enricher' },
+    { name: "Eval Conditions", value: 'evaluate-conditions' },
+    { name: "Filter Clients", value: 'filter-client' },
+    { name: "Input Handler", value: 'input-handler' },
+    { name: "Key Finder", value: 'key-finder' },
+    { name: "Output Handler", value: 'output-handler' }
     // {
     //   items: [{ name: "Spanish", value: "es" }],
     // },
   ];
+  
+  const selectPlugin = (e) => {
+    let dataPlugins = []
+    data.forEach(plugin => {
+      if(e === plugin.id) {
+        const object = {...plugin, uid: nanoid(5)}
+        dataPlugins.push(object);
+        setListPlugin([...listPlugin, ...dataPlugins]);
+      }
+    })
+  } 
 
-  const selectPlugin = (e) => YAMLtoJSON(e)
-  console.log(selectPlugin)
+
+
+  
 
   return (
     <SelectSearch
