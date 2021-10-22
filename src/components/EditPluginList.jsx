@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ModalNotSaved from '../elements/ModalNotSaved';
 
-const EditPluginList = () => {
+
+const EditPluginList = ({ listPlugin }) => {
+  
 
   const [modalNotSaved, setModalNotSaved] = useState(false);
 
@@ -9,16 +11,14 @@ const EditPluginList = () => {
     setModalNotSaved(true)
   };
 
-  const arrayPluginList = [];
-
   return (
     <div>
       <span>EditPluginList</span>
       <ul>
-        { arrayPluginList.length === 0 ? (
+        { listPlugin.length === 0 ? (
           <h1 className="text-center fst-italic text-black-50">Add a new plugin.</h1>
         ): (
-          <h1>Plugins</h1>
+        listPlugin.map((plugin) => ( <button key={plugin.uid}>{plugin.stepName}</button>))
         )}
         </ul>
       <button onClick={() => createYaml()}>CREATE</button>
