@@ -33,7 +33,7 @@ const filterPluggin = (e) => {
           <EditPluginList listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin}/>
         </div>
         <div className="col-6">
-          <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin} />
+          <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin}/>
         </div>
       </div>
       <div className="row">
