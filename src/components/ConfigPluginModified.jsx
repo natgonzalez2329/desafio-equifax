@@ -1,27 +1,28 @@
 import React from 'react';
 
-const ConfigPluginModified = ({ listPlugin }) => {
+
+const ConfigPluginModified = ({pluginSelect}) => {
   return (
     <div>
       <span>ConfigPluginModified</span>
       <form>
-        {listPlugin.length === 0 ? (
+        {console.log(pluginSelect)}
+        {pluginSelect===0 ? (
           <h1 className="text-center fst-italic text-black-50">
             Select and modify plugins
           </h1>
         ) : (
-          listPlugin.map((plugin) => (
-            <div key={plugin.uid}>
+          <div key={pluginSelect.uid}>
               <label>id</label>
-              <input type="text" placeholder={plugin.id} />
+              <input type="text" placeholder={pluginSelect.id} />
               <label>Dependencies</label>
-              <input type="text" placeholder={plugin.dependencies} />
+              <input type="text" placeholder={pluginSelect.dependencies} />
               <label>StepName</label>
-              <input type="text" placeholder={plugin.stepName} />
+              <input type="text" placeholder={pluginSelect.stepName} />
               <label>MainClass</label>
               <input
                 type="text"
-                placeholder={plugin.mainClass}
+                placeholder={pluginSelect.mainClass}
                 disabled="true"
               />
               <label>Config</label>
@@ -31,8 +32,8 @@ const ConfigPluginModified = ({ listPlugin }) => {
                 }
               })} */}
             </div>
-          ))
-        )}
+        )
+            }
       </form>
     </div>
   );
