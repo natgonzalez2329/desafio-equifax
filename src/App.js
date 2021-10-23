@@ -9,7 +9,7 @@ function App() {
 
   const [listPlugin, setListPlugin] = useState([]);
   const [checkSaved, setCheckSaved] = useState(false);
-
+console.log("hola")
   return (
     <div className="App container-fluid">
       <div className="row-sm">
