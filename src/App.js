@@ -8,8 +8,17 @@ import Footer from "./components/Footer";
 function App() {
 
   const [listPlugin, setListPlugin] = useState([]);
-  const [checkSaved, setCheckSaved] = useState(false);
+  const [pluginSelect,setPlugin]=useState(0);
 
+
+const filterPluggin = (e) => {
+    if(listPlugin!== null){
+      const newPluggin = listPlugin.filter((item) => item.uid === e);
+      setPlugin(newPluggin[0])
+      return <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin} />
+    }
+    
+};
   return (
     <div className="App container-fluid">
       <div className="row-sm">
@@ -22,16 +31,10 @@ function App() {
           setListPlugin={setListPlugin} />
         </div>
         <div className="col-3">
-          <EditPluginList 
-          listPlugin={listPlugin} 
-          checkSaved={checkSaved}
-          />
+          <EditPluginList listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin}/>
         </div>
         <div className="col-6">
-          <ConfigPluginModified 
-          listPlugin={listPlugin} 
-          setListPlugin={setListPlugin}
-          setCheckSaved={setCheckSaved} />
+          <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin}/>
         </div>
       </div>
       <div className="row">
