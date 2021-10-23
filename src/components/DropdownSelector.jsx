@@ -7,6 +7,10 @@ import { nanoid } from 'nanoid';
 
 const DropdownSelector = ({ listPlugin, setListPlugin }) => {
 
+  /* const plugins = () => {
+    data.forEach()
+  }; */
+
   const options = [
     { name: "Calculate Models", value: 'calculate-models' },
     { name: "Data Enricher", value: 'data-enricher' },
