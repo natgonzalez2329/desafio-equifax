@@ -1,8 +1,6 @@
-import React from "react";
+import React from 'react';
 
-
-
-const ModalConfigPluggin = ({listPlugin,filterPluggin}) => {
+const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
   return (
     <div>
       {listPlugin.map((pluggin) => {
@@ -11,7 +9,9 @@ const ModalConfigPluggin = ({listPlugin,filterPluggin}) => {
             type="button"
             key={pluggin.uid}
             data-tag={pluggin.uid}
-            onClick={(e)=>{filterPluggin(e.target.dataset.tag)}}
+            onClick={(e) => {
+              filterPluggin(e.target.dataset.tag);
+            }}
           >
             {pluggin.id}
           </button>
