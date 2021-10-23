@@ -8,21 +8,30 @@ import Footer from "./components/Footer";
 function App() {
 
   const [listPlugin, setListPlugin] = useState([]);
+  const [checkSaved, setCheckSaved] = useState(false);
 
   return (
-    <div className="App content-fluid">
+    <div className="App container-fluid">
       <div className="row-sm">
         <Header />
       </div>
       <div className="row">
         <div className="col-3">
-          <DropdownSelector listPlugin={listPlugin} setListPlugin={setListPlugin} />
+          <DropdownSelector 
+          listPlugin={listPlugin} 
+          setListPlugin={setListPlugin} />
         </div>
         <div className="col-3">
-          <EditPluginList listPlugin={listPlugin} setListPlugin={setListPlugin} />
+          <EditPluginList 
+          listPlugin={listPlugin} 
+          checkSaved={checkSaved}
+          />
         </div>
         <div className="col-6">
-          <ConfigPluginModified listPlugin={listPlugin} />
+          <ConfigPluginModified 
+          listPlugin={listPlugin} 
+          setListPlugin={setListPlugin}
+          setCheckSaved={setCheckSaved} />
         </div>
       </div>
       <div className="row">
