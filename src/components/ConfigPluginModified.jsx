@@ -26,11 +26,21 @@ const ConfigPluginModified = ({pluginSelect}) => {
                 disabled="true"
               />
               <label>Config</label>
-              {/* {Object.values(plugin.config).forEach((item) => {
-                if (item && typeof item === 'string') {
-                  console.log('hola str');
-                }
-              })} */}
+              {Object.keys(pluginSelect.config).map((item,index) => {
+                  return(<div key={index}>
+                  <label>{item}</label>
+                  <input
+                   type="text"
+                   placeholder={pluginSelect.config[item]}
+                  />
+                  </div>)
+              })
+               /* if (item && typeof item === 'string') {
+                  console.log(item);
+                }else if ( typeof item === 'object'){
+                  console.log(item);
+                }*/
+              }
             </div>
         )
             }
