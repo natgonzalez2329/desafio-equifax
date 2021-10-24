@@ -1,8 +1,9 @@
 import React from 'react'
+import '../styles/Modals.css'
 
 const ModalSave = ({closeModal}) => {
   return (
-    <div className="modalBackground">
+    <div className="modalBackground" >
       <div className="modal-container">
         <div className='container__modal'>
           <div className='content__modal'>
@@ -13,7 +14,7 @@ const ModalSave = ({closeModal}) => {
             </span>
             <h3 className="text-center">Has been saved succesfully!!</h3>
             <div className='modal__footer d-flex justify-content-center'>
-                <button className="btn bg-warning bg-gradient m-2 text-white" onClick={() => closeModal(false)}>OK</button>
+                <button className="btn bg-gradient m-2 text-white" style={{ backgroundColor:  "#007298" }} onClick={() => closeModal(false)}>OK</button>
             </div>
           </div>
         </div>

@@ -43,13 +43,16 @@ const DropdownSelector = ({ listPlugin, setListPlugin }) => {
   }; 
 
   return (
-    <SelectSearch
+    <div>    
+    <h6>Plugin Configuration</h6>               
+    <SelectSearch 
       options={options}
       search
       filterOptions={fuzzySearch}
       placeholder="Select a plugin"
       onChange={(e) => selectPlugin(e)}
     />
+    </div>
   );
 };
 

@@ -24,23 +24,25 @@ function App() {
       <div className="row-sm">
         <Header />
       </div>
+      <div className="p-2">
       <div className="row">
-        <div className="col-3">
+        <div className="col-2 d-flex justify-content-center">
           <DropdownSelector 
           listPlugin={listPlugin} 
           setListPlugin={setListPlugin} />
         </div>
-        <div className="col-3">
+        <div className="col-3 d-flex justify-content-center">
           <EditPluginList 
           listPlugin={listPlugin} 
           setListPlugin={setListPlugin} 
           filterPluggin={filterPluggin} />
         </div>
-        <div className="col-6">
+        <div className="col-6 d-flex justify-content-center">
           <ConfigPluginModified pluginSelect={pluginSelect} 
           setPlugin={setPlugin} listPlugin={listPlugin} 
           setListPlugin={setListPlugin} />
         </div>
+      </div>
       </div>
       <div className="row">
         <Footer />

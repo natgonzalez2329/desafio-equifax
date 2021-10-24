@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/Modals.css'
 
 const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setListPlugin }) => {
 
@@ -23,7 +24,7 @@ const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setLis
             <h3 className="text-center">Do you want to delete this plugin?</h3>
             <div className='modal__footer d-flex justify-content-center'>
               <button className="btn btn-danger me-md-2" onClick={() => closeModal(false)}>CANCEL</button>
-              <button className='btn btn-warning text-white' onClick={() => deletePlugin(pluginSelectId)}>DELETE</button>
+              <button className='btn text-white' style={{ backgroundColor:  "#007298" }} onClick={() => deletePlugin(pluginSelectId)}>DELETE</button>
             </div>
           </div>
         </div>
