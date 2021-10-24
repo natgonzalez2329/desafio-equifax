@@ -11,10 +11,10 @@
     align-items: center;
   }
   .modal-container{
-    width: 50%;
-    height: 100%;
+    width: 25em;
+    height: 10em;
     border-radius: 1rem;
-    background-color: rgb(151, 18, 18);
+    background-color: #555555;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -23,4 +23,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .btn{
+    background-color:  #007298;
   }

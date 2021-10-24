@@ -2,7 +2,7 @@
  * Main wrapper
  */
 .select-search {
-  width: 300px;
+  width: 100%;
   position: relative;
   font-family: "Nunito Sans", sans-serif;
   box-sizing: border-box;

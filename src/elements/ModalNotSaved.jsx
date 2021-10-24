@@ -14,7 +14,7 @@ const ModalNotSaved = ({closeModal}) => {
             </span>
             <h3 className="text-center">Unsaved changes!</h3>
             <div className='modal__footer d-flex justify-content-center'>
-                <button className="btn bg-warning bg-gradient m-2 text-white" onClick={() => closeModal(false)}>OK</button>
+                <button className="btn bg-gradient m-2 text-white" style={{ backgroundColor:  "#007298" }} onClick={() => closeModal(false)}>OK</button>
             </div>
           </div>
         </div>

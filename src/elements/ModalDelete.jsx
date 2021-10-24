@@ -15,7 +15,7 @@ const ModalDelete = ({closeModal}) => {
             <h3 className="text-center">Do you want to delete this plugin?</h3>
             <div className='modal__footer d-flex justify-content-center'>
               <button className="btn btn-danger me-md-2" onClick={() => closeModal(false)}>CANCEL</button>
-              <button className='btn btn-warning text-white' type="submit">DELETE</button>
+              <button className='btn text-white' style={{ backgroundColor:  "#007298" }} type="submit">DELETE</button>
             </div>
           </div>
         </div>
