@@ -26,9 +26,6 @@ const DropdownSelector = ({ listPlugin, setListPlugin }) => {
     { name: "Input Handler", value: 'input-handler' },
     { name: "Key Finder", value: 'key-finder' },
     { name: "Output Handler", value: 'output-handler' }
-    // {
-    //   items: [{ name: "Spanish", value: "es" }],
-    // },
   ];
   
   const selectPlugin = (e) => {

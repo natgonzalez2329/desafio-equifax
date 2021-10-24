@@ -7,6 +7,7 @@ const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
         return (
           <button
             type="button"
+            className="buttonList"
             key={pluggin.uid}
             data-tag={pluggin.uid}
             onClick={(e) => {

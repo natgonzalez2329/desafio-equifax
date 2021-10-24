@@ -100,7 +100,7 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
   return (
     <div>
       <span>ConfigPluginModified</span>
-      <form  id="formPlugins" onSubmit={(e) => changesSaved(e)} data-tag={pluginSelect.uid}>
+      <form  onSubmit={(e) => changesSaved(e)} data-tag={pluginSelect.uid}>
         {pluginSelect === 0 ? (
           <h1 className="text-center fst-italic text-black-50">
             Select and modify plugins
@@ -131,7 +131,7 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
               <option selected>dependencies</option>
               <option value="1">input</option>
             {
-            listPlugin.map((plugin) => <option key={plugin.uid} value={plugin.uid}>{plugin.dependencies}</option>)
+            listPlugin.map((plugin) => <option key={plugin.uid} value={plugin.uid}>{plugin.id}</option>)
             } 
             </select>
 

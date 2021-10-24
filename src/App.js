@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App container-fluid">
-      <div className="row-sm">
+      <div className="row">
         <Header />
       </div>
       <div className="p-2">
