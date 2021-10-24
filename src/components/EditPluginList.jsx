@@ -3,14 +3,11 @@ import ModalNotSaved from '../elements/ModalNotSaved';
 import ModalConfigPluggin from './ModalConfigPluggin';
 
 
-const EditPluginList = ({ listPlugin,setListPlugin,filterPluggin }) => {
+const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, checkSaved }) => {
   
-
   const [modalNotSaved, setModalNotSaved] = useState(false);
 
-  const createYaml = () => {
-    setModalNotSaved(true)
-  };
+  const createYaml = () => setModalNotSaved(true);
 
   return (
     <div>
@@ -19,7 +16,7 @@ const EditPluginList = ({ listPlugin,setListPlugin,filterPluggin }) => {
         { listPlugin.length === 0 ? (
           <h1 className="text-center fst-italic text-black-50">Add a new plugin.</h1>
         ): (
-        <ModalConfigPluggin listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin} />
+        <ModalConfigPluggin listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin} checkSaved={checkSaved} />
         )}
         </ul>
       <button onClick={() => createYaml()}>CREATE</button>

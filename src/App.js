@@ -1,16 +1,15 @@
 import React, {useState} from "react";
-import ConfigPluginModified from "./components/ConfigPluginModified";
-import DropdownSelector from "./components/DropdownSelector";
-import EditPluginList from "./components/EditPluginList";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import DropdownSelector from "./components/DropdownSelector";
+import EditPluginList from "./components/EditPluginList";
+import ConfigPluginModified from "./components/ConfigPluginModified";
+
+
 
 function App() {
-
   const [listPlugin, setListPlugin] = useState([]);
   const [pluginSelect,setPlugin] = useState(0);
-
-
 
   const filterPluggin = (e) => {
     if(listPlugin!== null){
@@ -19,7 +18,6 @@ function App() {
       return <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin} />
     }
   };
-
 
   return (
     <div className="App container-fluid">
@@ -33,10 +31,15 @@ function App() {
           setListPlugin={setListPlugin} />
         </div>
         <div className="col-3">
-          <EditPluginList listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin} />
+          <EditPluginList 
+          listPlugin={listPlugin} 
+          setListPlugin={setListPlugin} 
+          filterPluggin={filterPluggin} />
         </div>
         <div className="col-6">
-          <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin} listPlugin={listPlugin} setListPlugin={setListPlugin} />
+          <ConfigPluginModified pluginSelect={pluginSelect} 
+          setPlugin={setPlugin} listPlugin={listPlugin} 
+          setListPlugin={setListPlugin} />
         </div>
       </div>
       <div className="row">

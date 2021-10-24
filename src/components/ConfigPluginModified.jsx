@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ModalSave from '../elements/ModalSave';
+import ModalDelete from '../elements/ModalDelete';
 
 const extractObj = (k, v) => {
-  console.log(v);
+  // console.log(v);
   if (typeof v === 'string' || typeof v === 'number') {
     return (
       <div>
@@ -67,24 +69,38 @@ const typeValue = (t, a) => {
 
 const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlugin }) => {
 
-  const deletePlugin = (e, uid) => {
+  const [modalSave, setModalSave] = useState(false);
+  const [modalDelete, setModalDelete] = useState(false);
+
+  const openModalDelete = (e) => {
     e.preventDefault();
-    const pluginListRemoved = listPlugin.filter((plugin) => plugin.uid !== uid);
-    setPlugin(0);
-    setListPlugin(pluginListRemoved); 
+    setModalDelete(true);
+  };
+
+  const pluginChecked = (uid) => {
+    const plugins = listPlugin.map(plugin => {
+      if(plugin.uid === uid){
+        plugin.checkSaved = true;
+      }
+      return plugin;
+    });
+    setListPlugin([...plugins]);
   };
 
   const changesSaved = (e) => {
     e.preventDefault();
-    const valuesPluggins = e.target;
-    console.log(typeof(valuesPluggins))
+    const pluginIdSaved = e.target.dataset.tag;
+    pluginChecked(pluginIdSaved);
+    /* const valuesPlugins = e.target; */
+    // console.log(typeof(valuesPlugins))
     /* valuesPluggins.map(item => console.log(item)) */
-  }
+    setModalSave(true);
+  };
 
   return (
     <div>
       <span>ConfigPluginModified</span>
-      <form onSubmit={(e) => changesSaved(e) }>
+      <form  id="formPlugins" onSubmit={(e) => changesSaved(e)} data-tag={pluginSelect.uid}>
         {pluginSelect === 0 ? (
           <h1 className="text-center fst-italic text-black-50">
             Select and modify plugins
@@ -92,7 +108,7 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
         ) : (
           <div key={pluginSelect.uid}>
             <div>
-            <button onClick={(e) => deletePlugin(e, pluginSelect.uid)}>
+            <button onClick={(e) => openModalDelete(e)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -104,11 +120,22 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
                     <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                   </svg>
                 </button>
+                {modalDelete && <ModalDelete closeModal={setModalDelete}  pluginSelectId={pluginSelect.uid} listPlugin={listPlugin} setPlugin={setPlugin} setListPlugin={setListPlugin} />}
             </div>
             <label>id</label>
             <input type="text" placeholder={pluginSelect.id} name={"id"}/>
             <label>dependencies</label>
             <input type="text" placeholder={pluginSelect.dependencies} name={"dependencies"} />
+
+            <select>
+              <option selected>dependencies</option>
+              <option value="1">input</option>
+            {
+            listPlugin.map((plugin) => <option key={plugin.uid} value={plugin.uid}>{plugin.dependencies}</option>)
+            } 
+            </select>
+
+            
             <label>stepName</label>
             <input type="text" placeholder={pluginSelect.stepName} name={"stepName"} />
             <label>mainClass</label>
@@ -129,7 +156,8 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
                 <button type="submit">
                   SAVE
                 </button>
-                <button type="button" /* onSubmit={() => cancelEdit()} */>
+                {modalSave && <ModalSave closeModal={setModalSave} />}
+                <button type="button">
                   CANCEL
                 </button>
               </div>
