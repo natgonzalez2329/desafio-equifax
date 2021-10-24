@@ -76,7 +76,9 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
 
   const changesSaved = (e) => {
     e.preventDefault();
-    console.log(e)
+    const valuesPluggins = e.target;
+    console.log(typeof(valuesPluggins))
+    /* valuesPluggins.map(item => console.log(item)) */
   }
 
   return (
@@ -104,16 +106,16 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
                 </button>
             </div>
             <label>id</label>
-            <input type="text" placeholder={pluginSelect.id} />
-            <label>Dependencies</label>
-            <input type="text" placeholder={pluginSelect.dependencies} />
-            <label>StepName</label>
-            <input type="text" placeholder={pluginSelect.stepName} />
-            <label>MainClass</label>
+            <input type="text" placeholder={pluginSelect.id} name={"id"}/>
+            <label>dependencies</label>
+            <input type="text" placeholder={pluginSelect.dependencies} name={"dependencies"} />
+            <label>stepName</label>
+            <input type="text" placeholder={pluginSelect.stepName} name={"stepName"} />
+            <label>mainClass</label>
             <input
               type="text"
-              placeholder={pluginSelect.mainClass}
-              disabled
+              name={"mainClass"}
+              value={pluginSelect.mainClass}
             />
             <label>Config</label>
             {Object.keys(pluginSelect.config).map((item, index) => {
