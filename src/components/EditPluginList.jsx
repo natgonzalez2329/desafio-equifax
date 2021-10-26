@@ -12,12 +12,13 @@ const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, checkSaved }
   const createYaml = () => setModalNotSaved(true);
 
   return (
-    <div>
-      <div className="list-group-item m-2 overflow-auto text-white bgItems">
+    <div className="listColEdit">
+      <h4>Plugin List</h4>
+      <div className="list-group-item m-2 text-white bgItems">
         { listPlugin.length === 0 ? (
-          <h1 className="text-center fst-italic text-black-50">Add a new plugin</h1>
+          <h3 className="text-center fst-italic text-white-50 m-4 p-3" >+ Add a new plugin</h3>
         ): (
-        <ModalConfigPluggin listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin} checkSaved={checkSaved} />
+        <ModalConfigPluggin className="listColEdit tablink" listPlugin={listPlugin} setListPlugin={setListPlugin} filterPluggin={filterPluggin} checkSaved={checkSaved} />
         )}
         </div>
       <button className= "buttonCreate" onClick={() => createYaml()}>Create</button>

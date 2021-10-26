@@ -41,7 +41,7 @@ const DropdownSelector = ({ listPlugin, setListPlugin }) => {
 
   return (
     <div>    
-    <h6>Plugin Configuration</h6>               
+    <h4>Plugins</h4>               
     <SelectSearch 
       options={options}
       search

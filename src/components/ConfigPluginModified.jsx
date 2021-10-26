@@ -99,12 +99,12 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
 
   return (
     <div>
-      <span>ConfigPluginModified</span>
+      <h4>ConfigPluginModified</h4>
       <form  onSubmit={(e) => changesSaved(e)} data-tag={pluginSelect.uid}>
         {pluginSelect === 0 ? (
-          <h1 className="text-center fst-italic text-black-50">
+          <h3 className="text-center fst-italic text-white-50 m-5 p-5">
             Select and modify plugins
-          </h1>
+          </h3>
         ) : (
           <div key={pluginSelect.uid}>
             <div>
@@ -142,7 +142,7 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
             <input
               type="text"
               name={"mainClass"}
-              value={pluginSelect.mainClass}
+              placeholder={pluginSelect.mainClass}
             />
             <label>Config</label>
             {Object.keys(pluginSelect.config).map((item, index) => {
