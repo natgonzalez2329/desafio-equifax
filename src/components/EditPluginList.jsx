@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import ModalNotSaved from '../elements/ModalNotSaved';
 import ModalConfigPluggin from './ModalConfigPluggin';
+import Orchestration from './Orchestration';
 
 
-const EditPluginList = ({ listPlugin,setListPlugin,filterPluggin }) => {
+const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, orchestration}) => {
   
-
   const [modalNotSaved, setModalNotSaved] = useState(false);
 
-  const createYaml = () => {
-    setModalNotSaved(true)
-  };
+  const createYaml = () => setModalNotSaved(true);
 
   return (
     <div>
@@ -24,6 +22,7 @@ const EditPluginList = ({ listPlugin,setListPlugin,filterPluggin }) => {
         </ul>
       <button onClick={() => createYaml()}>CREATE</button>
       {modalNotSaved && <ModalNotSaved closeModal={setModalNotSaved} />}
+      <Orchestration orchestration={orchestration} />
     </div>
   )
 }
