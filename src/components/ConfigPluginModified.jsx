@@ -1,81 +1,111 @@
 import React, { useState } from "react";
 import ModalSave from "../elements/ModalSave";
 import ModalDelete from "../elements/ModalDelete";
-import "../styles/ConfigPluginModified.css";
-
-const extractObj = (k, v) => {
-  // console.log(v);
-  if (typeof v === "string" || typeof v === "number") {
-    return (
-      <div>
-        <label>{k}</label>
-        <input type="text" placeholder={v[k]} />
-      </div>
-    );
-  } else if (typeof v === "object") {
-    return (
-      <div>
-        {k}
-        {Object.keys(v).map((item, index) => {
-          return (
-            <div key={index}>
-              <label>{item}</label>
-              <input type="text" placeholder={v[item]} />
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-};
-
-const typeValue = (t, a) => {
-  if (typeof t === "string" || typeof t === "number") {
-    return (
-      <div>
-        <label>{a}</label>
-        <input type="text" placeholder={t[a]} />
-      </div>
-    );
-  } else if (Object.prototype.toString.call(t) === "[object Array]") {
-    return (
-      <div>
-        <div>{a}</div>
-        <div>
-          {t.map((item, id) => {
-            return (
-              <div key={id}>
-                {Object.keys(item).map((value, index) => {
-                  return (
-                    <div key={index}>{extractObj(value, item[value])}</div>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        {a}
-        {Object.keys(t).map((i, id) => {
-          return <div key={id}>{extractObj(i, t[i])}</div>;
-        })}
-      </div>
-    );
-  }
-};
 
 const ConfigPluginModified = ({
   pluginSelect,
   setPlugin,
   listPlugin,
   setListPlugin,
+  orchestration,
+  setOrchestration,
 }) => {
   const [modalSave, setModalSave] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
+
+  const typeValue = (key, value, index, title) => {
+    if (typeof value === "string" || typeof value === "number") {
+      return (
+        <div>
+          <label>{key}</label>
+          <input
+            type="text"
+            placeholder={value}
+            data-id="config"
+            data-name={title}
+            data-tag={index}
+            name={key}
+            onChange={handleInputChange}
+          />
+        </div>
+      );
+    } else if (Array.isArray(value)) {
+      return (
+        <div>
+          <div>
+            <label>{key}</label>
+            {value.map((item, id) => {
+              return <div key={id}>{typeValue(id, item, id, key)}</div>;
+            })}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <label>{key}</label>
+          {Object.keys(value).map((i, id) => {
+            return <div key={id}>{typeValue(i, value[i], key, id)}</div>;
+          })}
+        </div>
+      );
+    }
+  };
+
+  let pluginSelectModified = pluginSelect;
+  let dataObj = pluginSelectModified;
+  const handleInputChange = (event) => {
+    let name = event.target.name;
+    let indexArray = event.target.dataset.tag;
+    let valueParam = event.target.value;
+
+    let config = {};
+    if (pluginSelectModified[name]) {
+      pluginSelectModified[name] = valueParam;
+    } else {
+      const keysPluginSelect = Object.keys(pluginSelectModified);
+      keysPluginSelect.forEach((key) => {
+        if (key === "config") {
+          const keysConfigObj = Object.keys(pluginSelectModified[key]);
+          keysConfigObj.forEach((keyConfig) => {
+            const paramConfig = pluginSelectModified["config"][keyConfig];
+            if (keyConfig === name) {
+              pluginSelectModified["config"][keyConfig] = valueParam;
+            } else {
+              if (Array.isArray(paramConfig)) {
+                paramConfig.forEach((obj, index) => {
+                  if (index === Number(indexArray) && obj[name]) {
+                    pluginSelectModified["config"][keyConfig][index][name] =
+                      valueParam;
+                  } else if (obj[name] === undefined) {
+                    const nameVariables = Object.keys(obj);
+                    nameVariables.forEach((variable) => {
+                      Object.keys(obj[variable]).forEach((key) => {
+                        if (key === name) {
+                          paramConfig[index][variable][key] = valueParam;
+                        }
+                      });
+                    });
+                  }
+                });
+              } else if (!Array.isArray(paramConfig)) {
+                Object.keys(paramConfig).forEach((d) => {
+                  if (d === name) {
+                    paramConfig[d] = valueParam;
+                  }
+                  config = {
+                    ...pluginSelectModified["config"],
+                    ...{ [keyConfig]: paramConfig },
+                  };
+                });
+                dataObj = { ...pluginSelectModified, config };
+              }
+            }
+          });
+        }
+      });
+    }
+  };
 
   const openModalDelete = (e) => {
     e.preventDefault();
@@ -92,20 +122,20 @@ const ConfigPluginModified = ({
     setListPlugin([...plugins]);
   };
 
+  const saveId = (uid) => {
+    pluginChecked(uid);
+  };
+
   const changesSaved = (e) => {
     e.preventDefault();
-    const pluginIdSaved = e.target.dataset.tag;
-    pluginChecked(pluginIdSaved);
-    /* const valuesPlugins = e.target; */
-    // console.log(typeof(valuesPlugins))
-    /* valuesPluggins.map(item => console.log(item)) */
+    setOrchestration([...orchestration, pluginSelect]);
     setModalSave(true);
   };
 
   return (
     <div>
-      <form onSubmit={(e) => changesSaved(e)} data-tag={pluginSelect.uid}>
-        <h4>Configuration</h4>
+      <span>ConfigPluginModified</span>
+      <form onSubmit={(e) => changesSaved(e)}>
         {pluginSelect === 0 ? (
           <h1 className="text-center fst-italic text-black-50">
             Select and modify plugins
@@ -135,75 +165,65 @@ const ConfigPluginModified = ({
                 />
               )}
             </div>
-            <div className="form-row">
-              <div className="form-group col mt-4">
-                <label for="inputId">id</label>
-                <input
-                  class="form-control"
-                  id="inputId"
-                  type="text"
-                  placeholder={pluginSelect.id}
-                  name={"id"}
-                />
-                <label>dependencies</label>
-                <input
-                  type="text"
-                  placeholder={pluginSelect.dependencies}
-                  name={"dependencies"}
-                />
-                <select className="selectDependencies">
-                  <option selected>dependencies</option>
-                  <option value="1">input</option>
-                  {listPlugin.map((plugin) => (
-                    <option key={plugin.uid} value={plugin.uid}>
-                      {plugin.id}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-12 mt-2">
-                <label>stepName</label>
-              </div>
-              <div className="col-12 mt-1">
-                <input
-                  type="text"
-                  placeholder={pluginSelect.stepName}
-                  name={"stepName"}
-                />
-              </div>
-              <div className="col-12 mt-2">
-                <label>mainClass</label>
-              </div>
-              <div className="col-12 mt-1">
-                <input
-                  className="inputMainClass"
-                  type="text"
-                  name={"mainClass"}
-                  value={pluginSelect.mainClass}
-                  disabled
-                />
-              </div>
-              <div className="grid">
-                <div className="col-6 mt-3">
-                  <label>Config</label>
+            <label>id</label>
+            <input
+              type="text"
+              data-name="id"
+              placeholder={pluginSelect.id}
+              data-tag="id"
+              name="id"
+              onChange={(e) => handleInputChange(e)}
+            />
+            <label>dependencies</label>
+            <select
+              data-name="dependencies"
+              data-tag="dependencies"
+              name="dependencies"
+              onChange={handleInputChange}
+            >
+              <option selected>dependencies</option>
+              <option value="input">input</option>
+              {listPlugin.map((plugin) => (
+                <option key={plugin.uid} value={plugin.id}>
+                  {plugin.id}
+                </option>
+              ))}
+            </select>
+
+            <label>stepName</label>
+            <input
+              type="text"
+              data-name="text"
+              placeholder={pluginSelect.stepName}
+              data-tag="stepName"
+              name="stepName"
+              onChange={handleInputChange}
+            />
+            <label>mainClass</label>
+            <input
+              type="text"
+              data-name="mainClass"
+              data-tag="mainClass"
+              name="mainClass"
+              placeholder={pluginSelect.mainClass}
+              onChange={handleInputChange}
+            />
+            <label>Config</label>
+            {Object.keys(pluginSelect.config).map((key, index) => {
+              return (
+                <div key={index}>
+                  {typeValue(key, pluginSelect.config[key])}
                 </div>
-                <div className="col-6 mt-2">
-                  {Object.keys(pluginSelect.config).map((item, index) => {
-                    return (
-                      <div>
-                        <div className="col-6 mt-4 mb-4" key={index}>
-                          {typeValue(pluginSelect.config[item], item)}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
+              );
+            })}
             <div>
-              <button type="submit">SAVE</button>
+              <button type="submit" onClick={() => saveId(pluginSelect.uid)}>
+                SAVE
+              </button>
               {modalSave && <ModalSave closeModal={setModalSave} />}
-              <button type="button">CANCEL</button>
+              <button type="button" /* onSubmit={() => cancelEdit()} */>
+                CANCEL
+              </button>
             </div>
           </div>
         )}
