@@ -1,17 +1,17 @@
-import React, { useState, useEffect} from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import React, { useState, useEffect } from "react";
+import ConfigPluginModified from "./components/ConfigPluginModified";
 import DropdownSelector from "./components/DropdownSelector";
 import EditPluginList from "./components/EditPluginList";
-import ConfigPluginModified from "./components/ConfigPluginModified";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import yaml from 'js-yaml';
 
-
-
 function App() {
+
   const [listPlugin, setListPlugin] = useState([]);
   const [pluginSelect,setPlugin] = useState(0);
   const [dataYamlJson, setDataYamlJson] = useState([]);
+  const [orchestration,setOrchestration]=useState([])
 
   useEffect(() => {
     const ymlUrlFiles = [
@@ -35,9 +35,8 @@ function App() {
     Promise.all(ymlUrlFiles.map(async (yml) => await YAMLtoJSON(yml))).then((data) => setDataYamlJson(data));
   }, []);
 
-
   const filterPluggin = (e) => {
-    if(listPlugin !== null) {
+    if(listPlugin!== null){
       const newPluggin = listPlugin.filter((item) => item.uid === e);
       setPlugin(newPluggin[0])
       return <ConfigPluginModified pluginSelect={pluginSelect} setPlugin={setPlugin} />
@@ -61,17 +60,22 @@ function App() {
           <EditPluginList 
           listPlugin={listPlugin} 
           setListPlugin={setListPlugin} 
-          filterPluggin={filterPluggin} />
+          filterPluggin={filterPluggin} 
+          orchestration={orchestration}
+          />
         </div>
         <div className="col-6 d-flex justify-content-center">
           <ConfigPluginModified 
           pluginSelect={pluginSelect} 
           setPlugin={setPlugin} 
           listPlugin={listPlugin} 
-          setListPlugin={setListPlugin} />
+          setListPlugin={setListPlugin}
+          orchestration={orchestration}
+          setOrchestration={setOrchestration} 
+          />
         </div>
       </div>
-      </div>
+    </div>
       <div className="row">
         <Footer />
       </div>

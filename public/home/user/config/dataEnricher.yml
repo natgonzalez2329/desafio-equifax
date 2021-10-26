@@ -6,6 +6,4 @@
       recordClass: com.company.data.client.laborafax
       datasources:
         - name: debt
-          location: /server/datasources/debt/
-        - name: vehicles
-          location: /server/datasources/vehicles/  
+          location: /server/datasources/debt/         

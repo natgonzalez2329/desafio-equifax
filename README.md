@@ -107,7 +107,7 @@ El diseño se baso en un estilo minimalista, limpio y profesional utilizando la 
 
 ![colors](./src/assets/colors.jpeg)
 
-En base a la interfaz de Equifax, se jugo con la paleta de colores original, en donde predomina los matices de grises y negros; principalmente el gris oscuro plomo de fondo, simulando el _dark_ _mode_, en donde tiene mayor protagonismo al resaltar los elementos de interes; esto también ayuda a evitar o aminorar el cansancio visual,considerando las altas horas que tanto los desarrolladores de software o soporte de TI pasan en el ordenador.
+En base a la interfaz de Equifax, se jugo con la paleta de colores original, en donde predomina los matices de grises y negros; principalmente el gris oscuro plomo de fondo, simulando el _dark_ _mode_, en donde tiene mayor protagonismo al resaltar los elementos de interes; esto también ayuda a evitar o aminorar el cansancio visual, considerando las altas horas que tanto los desarrolladores de software o soporte de TI pasan en el ordenador.
 
 El color burdeo que resalta en el _header_ el logo de Equifax, característico de la página oficial de la empresa. El blanco se denota en el texto de toda la página en contraste con el fondo, de fácil lectura. Y por último los botones azules también característico de la página oficial.
 

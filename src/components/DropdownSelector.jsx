@@ -1,9 +1,8 @@
-import React  from "react";
+import React from "react";
 import SelectSearch from "react-select-search";
 import { fuzzySearch } from "react-select-search";
 import "../styles/DropdownSelector.css";
 import { nanoid } from 'nanoid';
-
 
 const DropdownSelector = ({ dataYamlJson, listPlugin, setListPlugin }) => {
 
@@ -13,7 +12,7 @@ const DropdownSelector = ({ dataYamlJson, listPlugin, setListPlugin }) => {
     const option = {name: pluginsName, value: pluginsId};
     return option;
   });
-  
+
   const selectPlugin = (e) => {
     let dataPlugins = [];
     dataYamlJson.forEach(plugin => {
@@ -26,15 +25,13 @@ const DropdownSelector = ({ dataYamlJson, listPlugin, setListPlugin }) => {
   }; 
 
   return (
-    <div>    
-    <h6>Plugin Configuration</h6>               
-    <SelectSearch 
+    <SelectSearch
       options={options}
       search
       filterOptions={fuzzySearch}
       placeholder="Select a plugin"
-      onChange={(e) => selectPlugin(e)} />
-    </div>
+      onChange={(e) => selectPlugin(e)}
+    />
   );
 };
 
