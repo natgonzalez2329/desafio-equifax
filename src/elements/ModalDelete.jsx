@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../styles/Modals.css';
 
 const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setListPlugin }) => {
 

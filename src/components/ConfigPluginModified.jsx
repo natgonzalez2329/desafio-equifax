@@ -53,7 +53,7 @@ const ConfigPluginModified = ({
   };
 
   let pluginSelectModified = pluginSelect;
-  let dataObj = pluginSelectModified;
+  let dataObj ={};
   const handleInputChange = (event) => {
     
     let name = event.target.name;
