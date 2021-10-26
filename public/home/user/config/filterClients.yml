@@ -5,6 +5,6 @@
     config:
       recordClass: com.company.data.client.laborafax
       conditions:
-        condition-1: laborafax.firstName == isEmpty
-        condition-2: laborafax.address == isEmpty
-        condition-3: laborafax.phone != isNumeric
+        condition1: laborafax.firstName == isEmpty
+        condition2: laborafax.address == isEmpty
+        condition3: laborafax.phone != isNumeric

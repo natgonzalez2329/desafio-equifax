@@ -15,12 +15,11 @@
     position: fixed;
     bottom: 90px; 
 }.buttonCreate:hover{
-        background-color: white;
-        color: #007298;
-        border: 2px solid #007298;
-        font-weight: bold;
-        }
-
+    background-color: white;
+    color: #007298;
+    border: 2px solid #007298;
+    font-weight: bold;
+}
 .bgItems{
     background-color: rgba(36, 35, 41, 1);
     overflow: auto;
@@ -28,7 +27,6 @@
     width: min-content;
     border: none;
 }
-
 .buttonList{
     background-color: rgba(123, 123, 123, 1);
     color: white;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
   return (
@@ -7,11 +7,11 @@ const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
         return (
           <button
             type="button"
-            className="buttonList"
             key={pluggin.uid}
             data-tag={pluggin.uid}
             onClick={(e) => {
               filterPluggin(e.target.dataset.tag);
+
             }}>
             {pluggin.id} 
             <span>{
@@ -30,6 +30,7 @@ const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
               <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
             </svg>
               }
+
             </span>
           </button>
         );
