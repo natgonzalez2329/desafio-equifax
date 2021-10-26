@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ModalSave from "../elements/ModalSave";
 import ModalDelete from "../elements/ModalDelete";
+import "../styles/ConfigPluginModified.css";
 
 const ConfigPluginModified = ({
   pluginSelect,
@@ -134,15 +135,17 @@ const ConfigPluginModified = ({
 
   return (
     <div>
-      <span>ConfigPluginModified</span>
+      <div className="col mt-3 mb-3">
+        <span>Configuration</span>
+      </div>
       <form onSubmit={(e) => changesSaved(e)}>
         {pluginSelect === 0 ? (
-          <h1 className="text-center fst-italic text-black-50">
+          <h1 className="text-center fst-sitalic text-black-50">
             Select and modify plugins
           </h1>
         ) : (
           <div key={pluginSelect.uid}>
-            <div>
+            <div className="col-md-4 offset-md-8 mb-3">
               <button onClick={(e) => openModalDelete(e)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -165,57 +168,83 @@ const ConfigPluginModified = ({
                 />
               )}
             </div>
-            <label>id</label>
-            <input
-              type="text"
-              data-name="id"
-              placeholder={pluginSelect.id}
-              data-tag="id"
-              name="id"
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>dependencies</label>
-            <select
-              data-name="dependencies"
-              data-tag="dependencies"
-              name="dependencies"
-              onChange={handleInputChange}
-            >
-              <option selected>dependencies</option>
-              <option value="input">input</option>
-              {listPlugin.map((plugin) => (
-                <option key={plugin.uid} value={plugin.id}>
-                  {plugin.id}
-                </option>
-              ))}
-            </select>
-
-            <label>stepName</label>
-            <input
-              type="text"
-              data-name="text"
-              placeholder={pluginSelect.stepName}
-              data-tag="stepName"
-              name="stepName"
-              onChange={handleInputChange}
-            />
-            <label>mainClass</label>
-            <input
-              type="text"
-              data-name="mainClass"
-              data-tag="mainClass"
-              name="mainClass"
-              placeholder={pluginSelect.mainClass}
-              onChange={handleInputChange}
-            />
-            <label>Config</label>
-            {Object.keys(pluginSelect.config).map((key, index) => {
-              return (
-                <div key={index}>
-                  {typeValue(key, pluginSelect.config[key])}
-                </div>
-              );
-            })}
+            <div className="form-row">
+              <div className="form-group col-4" id="formGroupId">
+                <label for="inputId">id</label>
+                <input
+                  className="form-control"
+                  id="inputId"
+                  type="text"
+                  data-name="id"
+                  placeholder={pluginSelect.id}
+                  data-tag="id"
+                  name="id"
+                  onChange={(e) => handleInputChange(e)}
+                />
+              </div>
+              <div className="form-group col-4">
+                <label for="selectDependencies">dependencies</label>
+                <select
+                  id="selectDependencies"
+                  className="form-control"
+                  data-name="dependencies"
+                  data-tag="dependencies"
+                  name="dependencies"
+                  onChange={handleInputChange}
+                >
+                  <option selected>dependencies</option>
+                  <option value="input">input</option>
+                  {listPlugin.map((plugin) => (
+                    <option key={plugin.uid} value={plugin.id}>
+                      {plugin.id}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div className="form-row">
+              <div className="form-group col-4 mt-2">
+                <label for="inputStepName">stepName</label>
+                <input
+                  id="inputStepName"
+                  className="form-control"
+                  type="text"
+                  data-name="text"
+                  placeholder={pluginSelect.stepName}
+                  data-tag="stepName"
+                  name="stepName"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="form-group col-4 mt-2">
+                <label for="inputMainClass">mainClass</label>
+                <input
+                  id="inputMainClass"
+                  className="form-control"
+                  type="text"
+                  data-name="mainClass"
+                  data-tag="mainClass"
+                  name="mainClass"
+                  placeholder={pluginSelect.mainClass}
+                  onChange={handleInputChange}
+                  disabled
+                />
+              </div>
+            </div>
+            <div className="col-6 mt-3 mb-2">
+              <label>Config</label>
+            </div>
+            <div className="form-group col-4 mt-2">
+              {Object.keys(pluginSelect.config).map((key, index) => {
+                return (
+                  <div className="form-group col-4 mt-3" id="inputConfig">
+                    <div key={index} id="inputConfig">
+                      {typeValue(key, pluginSelect.config[key])}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
             <div>
               <button type="submit" onClick={() => saveId(pluginSelect.uid)}>
                 SAVE

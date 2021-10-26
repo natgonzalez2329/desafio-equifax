@@ -6,9 +6,9 @@
   width: 100%;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.377);
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .modal-container {
   width: 25em;
@@ -21,8 +21,8 @@
 }
 .modal-content {
   width: 100%;
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
