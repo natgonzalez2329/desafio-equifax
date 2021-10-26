@@ -35,7 +35,7 @@
     width: 250px;
     height: 50px;
 }
-.buttonList:focus{
+.buttonList:before{
     background: rgba(238, 238, 238, 1);
     color: black;
 }
