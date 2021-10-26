@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ConfigPluginModified from "./components/ConfigPluginModified";
 import DropdownSelector from "./components/DropdownSelector";
 import EditPluginList from "./components/EditPluginList";
+import ConfigPluginModified from "./components/ConfigPluginModified";
+import FormsPreview from "./components/FormsPreview";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import yaml from "js-yaml";
@@ -11,6 +12,7 @@ function App() {
   const [pluginSelect, setPlugin] = useState(0);
   const [dataYamlJson, setDataYamlJson] = useState([]);
   const [orchestration, setOrchestration] = useState([]);
+  const [preview, setPreview] = useState(true);
 
   useEffect(() => {
     const ymlUrlFiles = [
@@ -37,7 +39,7 @@ function App() {
   }, []);
 
   const filterPluggin = (e) => {
-    if (listPlugin !== null) {
+    if (listPlugin) {
       const newPluggin = listPlugin.filter((item) => item.uid === e);
       setPlugin(newPluggin[0]);
       return (
@@ -68,17 +70,20 @@ function App() {
               listPlugin={listPlugin}
               setListPlugin={setListPlugin}
               filterPluggin={filterPluggin}
-              orchestration={orchestration}
+              setPlugin={setPlugin}
+              setPreview={setPreview}
+              setOrchestration={setOrchestration}
             />
           </div>
           <div className="col-6 d-flex justify-content-center">
-            <ConfigPluginModified
+            <FormsPreview
               pluginSelect={pluginSelect}
               setPlugin={setPlugin}
               listPlugin={listPlugin}
               setListPlugin={setListPlugin}
               orchestration={orchestration}
               setOrchestration={setOrchestration}
+              preview={preview}
             />
           </div>
         </div>
