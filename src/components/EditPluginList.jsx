@@ -1,15 +1,17 @@
 import React from 'react';
 import ModalConfigPluggin from './ModalConfigPluggin';
 
-const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, setPlugin}) => {
+const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, setPlugin, setOrchestration, setPreview }) => {
 
   const newOrchestration = () => {
     setListPlugin([]);
     setPlugin(0);
+    setOrchestration([]);
+    setPreview(true);
   }
 
   const createYaml = () => {
-    console.log("crear")
+    setPreview(false);
   };
 
   return (
