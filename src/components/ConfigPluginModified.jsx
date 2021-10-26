@@ -168,7 +168,6 @@ const ConfigPluginModified = ({
                 />
               )}
             </div>
-
             <div className="form-row">
               <div className="form-group col-4" id="formGroupId">
                 <label for="inputId">id</label>
@@ -184,7 +183,7 @@ const ConfigPluginModified = ({
                 />
               </div>
               <div className="form-group col-4">
-                <label for="selectDependencies">dependencies</label>
+                <label for="selectDependencies">Select dependencies</label>
                 <select
                   id="selectDependencies"
                   className="form-control"
