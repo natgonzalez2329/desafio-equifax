@@ -71,7 +71,7 @@ function App() {
               orchestration={orchestration}
             />
           </div>
-          <div className="col-6 ">
+          <div className="col-6">
             <ConfigPluginModified
               pluginSelect={pluginSelect}
               setPlugin={setPlugin}

@@ -28,3 +28,20 @@ input {
   background-color: #eee;
   border-radius: 3px;
 }
+
+.buttonSave {
+  background-color: #007298;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 90px;
+}
+.buttonSave:hover {
+  background-color: white;
+  color: #007298;
+  border: 2px solid #007298;
+  font-weight: bold;
+}

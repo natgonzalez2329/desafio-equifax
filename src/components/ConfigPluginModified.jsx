@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ModalSave from "../elements/ModalSave";
 import ModalDelete from "../elements/ModalDelete";
 import "../styles/ConfigPluginModified.css";
+import Orchestration from "./Orchestration";
 
 const ConfigPluginModified = ({
   pluginSelect,
@@ -136,13 +137,13 @@ const ConfigPluginModified = ({
   return (
     <div>
       <div className="col mt-3 mb-3">
-        <span>Configuration</span>
+        <h4>Configuration</h4>
       </div>
       <form onSubmit={(e) => changesSaved(e)}>
         {pluginSelect === 0 ? (
-          <h1 className="text-center fst-sitalic text-black-50">
+          <h3 className="text-center fst-italic text-white-50 m-5 p-5">
             Select and modify plugins
-          </h1>
+          </h3>
         ) : (
           <div key={pluginSelect.uid}>
             <div className="col-md-4 offset-md-8 mb-3">
@@ -246,17 +247,21 @@ const ConfigPluginModified = ({
               })}
             </div>
             <div>
-              <button type="submit" onClick={() => saveId(pluginSelect.uid)}>
+              <button
+                className="buttonSave"
+                type="submit"
+                onClick={() => saveId(pluginSelect.uid)}
+              >
                 SAVE
               </button>
               {modalSave && <ModalSave closeModal={setModalSave} />}
-              <button type="button" /* onSubmit={() => cancelEdit()} */>
-                CANCEL
-              </button>
             </div>
           </div>
         )}
       </form>
+      <div className="col-12">
+        <Orchestration orchestration={orchestration} />
+      </div>
     </div>
   );
 };

@@ -24,13 +24,16 @@ const DropdownSelector = ({ dataYamlJson, listPlugin, setListPlugin }) => {
   };
 
   return (
-    <SelectSearch
-      options={options}
-      search
-      filterOptions={fuzzySearch}
-      placeholder="Select a plugin"
-      onChange={(e) => selectPlugin(e)}
-    />
+    <div>
+      <h4 className="mt-3 mb-3">Plugins</h4>
+      <SelectSearch
+        options={options}
+        search
+        filterOptions={fuzzySearch}
+        placeholder="Select a plugin"
+        onChange={(e) => selectPlugin(e)}
+      />
+    </div>
   );
 };
 
