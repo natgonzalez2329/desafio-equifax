@@ -4,7 +4,6 @@ import '../styles/Modals.css'
 const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setListPlugin }) => {
 
   const deletePlugin = (uid) => {
-    console.log(pluginSelectId)
     const pluginListRemoved = listPlugin.filter((plugin) => plugin.uid !== uid);
     setPlugin(0);
     setListPlugin(pluginListRemoved);

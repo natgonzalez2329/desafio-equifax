@@ -53,7 +53,7 @@ const ConfigPluginModified = ({
   };
 
   let pluginSelectModified = pluginSelect;
-  let dataObj = pluginSelectModified;
+  let dataObj = null;
   const handleInputChange = (event) => {
     
     let name = event.target.name;
@@ -183,7 +183,7 @@ const ConfigPluginModified = ({
               name="dependencies"
               onChange={handleInputChange}
             >
-              <option selected>dependencies</option>
+              <option defaultValue>Select dependence</option>
               <option value="input">input</option>
               {listPlugin.map((plugin) => (
                 <option key={plugin.uid} value={plugin.id}>
@@ -191,7 +191,6 @@ const ConfigPluginModified = ({
                 </option>
               ))}
             </select>
-
             <label>stepName</label>
             <input
               type="text"
@@ -207,8 +206,9 @@ const ConfigPluginModified = ({
               data-name="mainClass"
               data-tag="mainClass"
               name="mainClass"
-              placeholder={pluginSelect.mainClass}
+              value={pluginSelect.mainClass}
               onChange={handleInputChange}
+              readOnly
             />
             <label>Config</label>
             {Object.keys(pluginSelect.config).map((key, index) => {
@@ -223,9 +223,6 @@ const ConfigPluginModified = ({
                 SAVE
               </button>
               {modalSave && <ModalSave closeModal={setModalSave} />}
-              <button type="button" /* onSubmit={() => cancelEdit()} */>
-                CANCEL
-              </button>
             </div>
           </div>
         )}

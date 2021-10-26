@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import ModalNotSaved from '../elements/ModalNotSaved';
+import React from 'react';
 import ModalConfigPluggin from './ModalConfigPluggin';
-import Orchestration from './Orchestration';
 
+const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, setPlugin}) => {
 
-const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, orchestration}) => {
+  const newOrchestration = () => {
+    setListPlugin([]);
+    setPlugin(0);
+  }
 
-  const [modalNotSaved, setModalNotSaved] = useState(false);
-
-  const createYaml = () => setModalNotSaved(true);
+  const createYaml = () => {
+    console.log("crear")
+  };
 
   return (
     <div>
       <span>EditPluginList</span>
+      <button onClick={() => newOrchestration()}>New orchestration</button>
       <ul>
         { listPlugin.length === 0 ? (
           <h1 className="text-center fst-italic text-black-50">Add a new plugin.</h1>
@@ -21,8 +24,6 @@ const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, orchestratio
         )}
         </ul>
       <button onClick={() => createYaml()}>CREATE</button>
-      {modalNotSaved && <ModalNotSaved closeModal={setModalNotSaved} />}
-      <Orchestration orchestration={orchestration} />
     </div>
   )
 }
