@@ -1,0 +1,15 @@
+input {
+  background-color: #eee;
+  border-radius: 3px;
+  height: 40px;
+}
+
+.inputMainClass {
+  background-color: #b8b7b7;
+}
+
+.selectDependencies {
+  background-color: #eee;
+  border-radius: 3px;
+  height: 40px;
+}
