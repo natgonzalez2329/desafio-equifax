@@ -87,10 +87,14 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
     setListPlugin([...plugins]);
   };
 
+
+  const saveId = (uid) => {
+    pluginChecked(uid);
+  }
+
   const changesSaved = (e) => {
     e.preventDefault();
-    const pluginIdSaved = e.target.dataset.tag;
-    pluginChecked(pluginIdSaved);
+   /*  const pluginIdSaved = e.target.dataset.tag; */
     /* const valuesPlugins = e.target; */
     // console.log(typeof(valuesPlugins))
     /* valuesPluggins.map(item => console.log(item)) */
@@ -100,7 +104,7 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
   return (
     <div>
       <span>ConfigPluginModified</span>
-      <form  onSubmit={(e) => changesSaved(e)} data-tag={pluginSelect.uid}>
+      <form  onSubmit={(e) => changesSaved(e)}>
         {pluginSelect === 0 ? (
           <h1 className="text-center fst-italic text-black-50">
             Select and modify plugins
@@ -142,7 +146,8 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
             <input
               type="text"
               name={"mainClass"}
-              value={pluginSelect.mainClass}
+              placeholder={pluginSelect.mainClass}
+              disabled
             />
             <label>Config</label>
             {Object.keys(pluginSelect.config).map((item, index) => {
@@ -153,7 +158,7 @@ const ConfigPluginModified = ({ pluginSelect, setPlugin, listPlugin, setListPlug
               );
             })}
             <div>
-                <button type="submit">
+                <button type="submit" onClick={() => saveId(pluginSelect.uid)}>
                   SAVE
                 </button>
                 {modalSave && <ModalSave closeModal={setModalSave} />}

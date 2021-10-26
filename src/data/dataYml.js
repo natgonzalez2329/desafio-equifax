@@ -1,4 +1,4 @@
-import yaml from 'js-yaml';
+/* import yaml from 'js-yaml';
 
 let data = [];
 const YAMLtoJSON  = (yml) =>{
@@ -22,3 +22,4 @@ YAMLtoJSON('../../home/user/config/keyFinder.yml');
 YAMLtoJSON('../../home/user/config/outputHandler.yml');
 
 export { data };
+ */
