@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ModalSave from "../elements/ModalSave";
 import ModalDelete from "../elements/ModalDelete";
 import "../styles/ConfigPluginModified.css";
-import Orchestration from "./Orchestration";
 
 const ConfigPluginModified = ({
   pluginSelect,
@@ -260,7 +259,6 @@ const ConfigPluginModified = ({
           </div>
         )}
       </form>
-      <Orchestration orchestration={orchestration} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react';
-import ConfigPluginModified from './ConfigPluginModified';
-import Orchestration from './Orchestration';
+import React from "react";
+import ConfigPluginModified from "./ConfigPluginModified";
+import Orchestration from "./Orchestration";
 
 const FormsPreview = ({
   pluginSelect,
