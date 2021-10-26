@@ -8,7 +8,7 @@ const EditPluginList = ({ listPlugin, setListPlugin, filterPluggin, setPlugin, s
     setPlugin(0);
     setOrchestration([]);
     setPreview(true);
-  }
+  };
 
   const createYaml = () => {
     setPreview(false);
