@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import ModalSave from '../elements/ModalSave';
-import ModalDelete from '../elements/ModalDelete';
-import '../styles/ConfigPluginModified.css';
+import React, { useState } from "react";
+import ModalSave from "../elements/ModalSave";
+import ModalDelete from "../elements/ModalDelete";
+import "../styles/ConfigPluginModified.css";
 
 const ConfigPluginModified = ({
   pluginSelect,
@@ -18,16 +18,23 @@ const ConfigPluginModified = ({
     if (typeof value === 'string' || typeof value === 'number') {
       return (
         <div>
-          <label>{key}</label>
-          <input
-            type="text"
-            placeholder={value}
-            data-id="config"
-            data-name={title}
-            data-tag={index}
-            name={key}
-            onChange={handleInputChange}
-          />
+          <div className="form-row">
+            <div className="form-group col-7 mt-3">
+              <label for="inputFields">{key}</label>
+              <input
+                className="form-control"
+                id="inputFields"
+                type="text"
+                placeholder={value}
+                oup
+                data-id="config"
+                data-name={title}
+                data-tag={index}
+                name={key}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
         </div>
       );
     } else if (Array.isArray(value)) {
@@ -44,7 +51,6 @@ const ConfigPluginModified = ({
     } else {
       return (
         <div>
-          <label>{key}</label>
           {Object.keys(value).map((i, id) => {
             return <div key={id}>{typeValue(i, value[i], key, id)}</div>;
           })}
@@ -76,7 +82,7 @@ const ConfigPluginModified = ({
               if (Array.isArray(paramConfig)) {
                 paramConfig.forEach((obj, index) => {
                   if (index === Number(indexArray) && obj[name]) {
-                    pluginSelectModified['config'][keyConfig][index][name] =
+                    pluginSelectModified["config"][keyConfig][index][name] =
                       valueParam;
                   } else if (obj[name] === undefined) {
                     const nameVariables = Object.keys(obj);
@@ -134,18 +140,18 @@ const ConfigPluginModified = ({
   };
 
   return (
-    <div>
+    <div className="contentConfig">
       <div className="col mt-3 ">
-        <h4>Configuration</h4>
+        <h4 className="configTitle">Configuration</h4>
       </div>
-      <form onSubmit={(e) => changesSaved(e)}>
+      <form autocomplete="off" onSubmit={(e) => changesSaved(e)}>
         {pluginSelect === 0 ? (
           <h3 className="text-center fst-italic text-white-50 m-5 p-5">
             Select and modify plugins
           </h3>
         ) : (
           <div key={pluginSelect.uid}>
-            <div className="col-md-4 offset-md-8 mb-3">
+            <div className="col-md-4 offset-md-8 mb-3 d-flex justify-content-end">
               <button className="btn-trash" onClick={(e) => openModalDelete(e)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -239,10 +245,10 @@ const ConfigPluginModified = ({
               <div className="col-6 mt-3 mb-2">
                 <label>Config</label>
               </div>
-              <div className="form-group col-4 mt-2">
+              <div>
                 {Object.keys(pluginSelect.config).map((key, index) => {
                   return (
-                    <div className="form-group col-4 mt-3" id="inputConfig">
+                    <div id="inputConfig">
                       <div key={index} id="inputConfig">
                         {typeValue(key, pluginSelect.config[key])}
                       </div>
@@ -251,7 +257,7 @@ const ConfigPluginModified = ({
                 })}
               </div>
             </div>
-            <div>
+            <div className="d-flex justify-content-center">
               <button
                 className="buttonSave"
                 type="submit"

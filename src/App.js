@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import DropdownSelector from './components/DropdownSelector';
-import EditPluginList from './components/EditPluginList';
-import ConfigPluginModified from './components/ConfigPluginModified';
-import FormsPreview from './components/FormsPreview';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import yaml from 'js-yaml';
+import React, { useState, useEffect } from "react";
+import DropdownSelector from "./components/DropdownSelector";
+import EditPluginList from "./components/EditPluginList";
+import ConfigPluginModified from "./components/ConfigPluginModified";
+import FormsPreview from "./components/FormsPreview";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import yaml from "js-yaml";
 
 function App() {
   const [listPlugin, setListPlugin] = useState([]);
@@ -16,13 +16,13 @@ function App() {
 
   useEffect(() => {
     const ymlUrlFiles = [
-      '../../home/user/config/calculateModels.yml',
-      '../../home/user/config/dataEnricher.yml',
-      '../../home/user/config/evaluateConditions.yml',
-      '../../home/user/config/filterClients.yml',
-      '../../home/user/config/inputHandler.yml',
-      '../../home/user/config/keyFinder.yml',
-      '../../home/user/config/outputHandler.yml',
+      "../../home/user/config/calculateModels.yml",
+      "../../home/user/config/dataEnricher.yml",
+      "../../home/user/config/evaluateConditions.yml",
+      "../../home/user/config/filterClients.yml",
+      "../../home/user/config/inputHandler.yml",
+      "../../home/user/config/keyFinder.yml",
+      "../../home/user/config/outputHandler.yml",
     ];
     const YAMLtoJSON = async (yml) => {
       const dataFetched = await fetch(yml);
@@ -75,7 +75,7 @@ function App() {
               setOrchestration={setOrchestration}
             />
           </div>
-          <div className="col-6 d-flex justify-content-center">
+          <div className="col-6">
             <FormsPreview
               pluginSelect={pluginSelect}
               setPlugin={setPlugin}

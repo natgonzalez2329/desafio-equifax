@@ -1,19 +1,18 @@
 # Desafío Interfaz de adaptadores
 
-
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Descripción general](#2-descripción-general)
-* [3. Perfil de usuario](#3-perfil-de-usuario)
-* [4. Historia de usuario](#4-historia-de-usuario)
-* [5. Prototipo y diseño](#5-prototipo-y-diseño)
-* [6. Interfaz](#6-interfaz)
-* [7. Modo de usuario](#7-modo-de-usuario)
-* [8. Tecnologías](#8-tecnologías)
-* [9. Enlace web](#9-enlace-web)
+- [1. Preámbulo](#1-preámbulo)
+- [2. Descripción general](#2-descripción-general)
+- [3. Perfil de usuario](#3-perfil-de-usuario)
+- [4. Historia de usuario](#4-historia-de-usuario)
+- [5. Prototipo y diseño](#5-prototipo-y-diseño)
+- [6. Interfaz](#6-interfaz)
+- [7. Modo de usuario](#7-modo-de-usuario)
+- [8. Tecnologías](#8-tecnologías)
+- [9. Enlace web](#9-enlace-web)
 
-***
+---
 
 ## 1. Preámbulo
 
@@ -44,7 +43,7 @@ El proceso declarado anteriormente entrega como resultado un archivo YAML, el cu
 
 ## 3. Perfil de usuario
 
-La plataforma está destinada a desarrolladores de software o soporte TI de la empresa Equifax. Para optimizar el trabajo en reunir los datos de los requerimientos que necesiten y que los complemente con la información disponible por Equifax, y entregue una visualización de esta información, se toma en cuenta en el análisis del perfil varias características en la interacción del mismo con la plataforma, en donde se resalta, que la implementación del proceso de selección, modificación, eliminar, añadir o guardar la configuración de los adaptadores debe darse de forma simple e inmediata en una misma interfaz, para la obtención de la orquestación requerida; cumpliendo con el principal objetivo que es satisfacer las solicitudes de análisis financiero de sus respectivos clientes. 
+La plataforma está destinada a desarrolladores de software o soporte TI de la empresa Equifax. Para optimizar el trabajo en reunir los datos de los requerimientos que necesiten y que los complemente con la información disponible por Equifax, y entregue una visualización de esta información, se toma en cuenta en el análisis del perfil varias características en la interacción del mismo con la plataforma, en donde se resalta, que la implementación del proceso de selección, modificación, eliminar, añadir o guardar la configuración de los adaptadores debe darse de forma simple e inmediata en una misma interfaz, para la obtención de la orquestación requerida; cumpliendo con el principal objetivo que es satisfacer las solicitudes de análisis financiero de sus respectivos clientes.
 
 El diseño debe estar basado en el estilo y paleta de colores de la plataforma oficial, ya que está será una extensión de la página. También se debe tomar en cuenta que el usuario final pasa una cantidad considerable de tiempo frente al ordenador por lo que la interfaz debe ser amena y de fácil entendimiento a la vista, y que posee conocimiento sobre la información y formatos de archivos que se manejan, por lo que se emplearan manejos de términos acorde al ámbito.
 
@@ -117,6 +116,7 @@ El color burdeo que resalta en el _header_ el logo de Equifax, característico d
 - Al elegir los plugins, aparecerán de manera simultánea en una lista por orden de selección. Al clickear cada plugin seleccionado en la lista, siguiendo la dinámica de un tab, aparecerá la información correspondiente de cada plugin, en donde se podrá ingresar los datos; estos podrán ser guardados al clickear el botón _Save_, en donde inmediatamente en la lista se indicará el plugin que fue guardado por un _check_ y a su véz emergerá un mensaje que le notificará al usuario que fue exitosamente guardado. Los plugins no guardados se identifican por un _dot_.  
 - También se podrá eliminar los plugin, a través de un botón, que al clickearlo se desplegará un mensaje de confirmación para eliminar, en donde podrá confirmar la eliminación o cancelarla. 
 - Una vez guardados todos los plugins se crea y visualiza la orquestación al clickear el botón _create_, con opción a descargar en formato YAML.
+
 ## 8. Tecnologías
 
 * React.js.
@@ -125,4 +125,5 @@ El color burdeo que resalta en el _header_ el logo de Equifax, característico d
 * Libreria js-yaml.
 * HTML5.
 * CSS.
+
 ## 9. Enlace web

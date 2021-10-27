@@ -18,7 +18,6 @@ const EditPluginList = ({
     setModalNewFile(true);
   };
 
-
   const createYaml = () => {
     setPreview(false);
   };
@@ -37,7 +36,7 @@ const EditPluginList = ({
           </h3>
         ) : (
           <ModalConfigPluggin
-            className="listColEdit tablink"
+            className="listColEdit"
             listPlugin={listPlugin}
             setListPlugin={setListPlugin}
             filterPluggin={filterPluggin}
