@@ -34,13 +34,12 @@ Los adaptadores podrían requerir una cantidad diferente de parámetros. Estos p
 
 El proceso declarado anteriormente entrega como resultado un archivo YAML, el cual contiene parámetros y configuración definida por el usuario.
 
-## Diagrama representando el flujo completo del cliente
+## Diagrama de ejecución
+![diagrama-equifax](./src/assets/Diagrama-Equifax.png)
+
+## Diagrama representando el flujo completo del usuario
 
 ![diagrama-equifax](./src/assets/diagrama-equifax.jpeg)
-
-## Ejemplo de la metadata YAML para un adaptador
-
-![metadata](./src/assets/metadata.jpeg)
 
 ## 3. Perfil de usuario
 
@@ -56,27 +55,27 @@ Yo como miembro de soporte TI quiero seleccionar adaptadores de una forma sencil
 
 ### Criterios de aceptación
 
-- El usuario podrá acceder a las opciones de plugins a través de un dropdown o search.
-- Al Clickear o seleccionar el plugin se añadirá a una lista por orden de selección.
-- El usuario al clickear el plugin seleccionado en la lista, se desplegará una sección de los datos con sus respectivos campos para añadir o modificar la información.
-- El usuario podrá guardar las modificaciones hechas en la configuración de cada plugin.
-- Al guardar los cambios, el usuario podrá visualizar un _check_, el cual indica que el plugin ha sido guardado.
-- Se notificará al usuario que sus modificaciones han sido guardadas exitosamente con un mensaje emergente.
-- Los plugins que han sido modificados pero no guardados se distinguirá por un \_dot\_\_ para su identificación.
-- El usuario podrá eliminar de la lista cualquier plugin, si así lo desea, en donde al clickear el botón de eliminar, emergerá un mensaje de confirmación de dicha acción, a la cual podrá reafirmar o cancelar.
+* El usuario podrá acceder a las opciones de plugins a través de un dropdown o search.
+* Al Clickear o seleccionar el plugin se añadirá a una lista por orden de selección.
+* El usuario al clickear el plugin seleccionado en la lista, se desplegará una sección de los datos con sus respectivos campos para añadir o modificar la información.
+* El usuario podrá guardar las modificaciones hechas en la configuración de cada plugin.
+* Al guardar los cambios, el usuario podrá visualizar un _check_, el cual indica que el plugin ha sido guardado.
+* Se notificará al usuario que sus modificaciones han sido guardadas exitosamente con un mensaje emergente.
+* Los plugins que han sido modificados pero no guardados se distinguirá por un _dot__ para su identificación.
+* El usuario podrá eliminar de la lista cualquier plugin, si así lo desea, en donde al clickear el botón de eliminar, emergerá un mensaje de confirmación de dicha acción, a la cual podrá reafirmar o cancelar.
 
 ### Definición de terminado
 
-- Transformar _data de adapters_ (YAML) a JSON.
-- Diseño de 3 secciones.
-- En la primera sección se ubica un dropdown/search, con el despliegue de las opciones de plugins, también al escribir deben aparecer las que coinciden con la busqueda.
-- En la segunda sección se ubica la lista de plugins dinámicamente ordenados de acuerdo a su selección.
-- Los plugins seleccionados se identidicarán si están guardados o no, por un _check_ y un _dot_, respectivamente.
-- En la tercera sección se ubica la información requerida de cada plugin con los campos para su modificación.
-- Todos los campos son modificables excepto el _mainClass_.
-- Las dependencias deben ser determinadas a través de un select, cuyas opciones sean los plugin que fueron seleccionados en la lista, con una opción por default denominada _input_.
-- Botón para eliminar que desplegará un modal con mensaje de confirmación para eliminar el plugin con botones de eliminar o cancelar.
-- Botón de guardar modificaciones, se despliegua modal con mensaje de guardado exitosamente.
+* Transformar _data de adapters_ (YAML) a JSON.
+* Diseño de 3 secciones.
+* En la primera sección se ubica un dropdown/search, con el despliegue de las opciones de plugins, también al escribir deben aparecer las que coinciden con la busqueda.
+* En la segunda sección se ubica la lista de plugins dinámicamente ordenados de acuerdo a su selección.
+* Los plugins seleccionados se identidicarán si están guardados o no, por un _check_ y un _dot_, respectivamente.
+* En la tercera sección se ubica la información requerida de cada plugin con los campos para su modificación.
+* Todos los campos son modificables excepto el _mainClass_.
+* Las dependencias deben ser determinadas a través de un select, cuyas opciones sean los plugin que fueron seleccionados en la lista, con una opción por default denominada _input_.
+* Botón para eliminar que desplegará un modal con mensaje de confirmación para eliminar el plugin con botones de eliminar o cancelar.
+* Botón de guardar modificaciones, se despliegua modal con mensaje de guardado exitosamente.
 
 #### [Historia de usuario 2] Desarrollador de software.
 
@@ -84,19 +83,19 @@ Yo como desarrollador de software quiero crear un archivo con los plugins y pode
 
 ### Criterios de aceptación
 
-- El usuario podrá crear un archivo ("_orquestación_"), con los plugins seleccionados/modificados.
-- Se confirmará que se hayan guardados todas la modificaciones para crear el archivo.
-- Al crearse el archivo, lo podrá previsualizar.
-- Opción a descargar archivo en formato YAML.
+* El usuario podrá crear un archivo ("_orquestación_"), con los plugins seleccionados/modificados.
+* Se confirmará que se hayan guardados todas la modificaciones para crear el archivo.
+* Al crearse el archivo, lo podrá previsualizar.
+* Opción a descargar archivo en formato YAML.
 
 ### Definición de terminado
 
-- Obtener datos de campos por cada plugin.
-- Ordenar de acuerdo a selección.
-- Transformar a formato YAML.
-- Previsualización de orquestación.
-- Botón para descargar archivo en formato YAML.
-- Opción de crear una nueva orquestación.
+* Obtener datos de campos por cada plugin.
+* Ordenar de acuerdo a selección.
+* Transformar a formato YAML.
+* Previsualización de orquestación.
+* Botón para descargar archivo en formato YAML.
+* Opción de crear una nueva orquestación.
 
 ## 5. Prototipo y diseño
 
@@ -108,23 +107,23 @@ En base a la interfaz de Equifax, se jugo con la paleta de colores original, en 
 
 El color burdeo que resalta en el _header_ el logo de Equifax, característico de la página oficial de la empresa. El blanco se denota en el texto de toda la página en contraste con el fondo, de fácil lectura. Y por último los botones azules también característico de la página oficial.
 
-### Prototipo de baja fidelidad.
-
-### Prototipo de alta fidelidad.
-
+[Ver Prototipo de alta fidelidad-Figma](https://www.figma.com/proto/bO0pvyFSlB6qBwC5jsca4i/EQUIFAX?node-id=0%3A1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=107%3A2)
 ## 6. Interfaz
 
 ## 7. Modo de usuario
 
 - Al ingresar a la plataforma, a través del menú dropdown que a su vez posee un search box, podrá seleccionar o hacer la búsqueda específica de las diferentes opciones de plugins.
-- Al elegir los plugins, aparecerán de manera simultánea en una lista por orden de selección. Al clickear cada plugin seleccionado en la lista, siguiendo la dinámica de un tab, aparecerá la información correspondiente de cada plugin, en donde se podrá ingresar los datos; estos podrán ser guardados al clickear el botón _Save_, en donde inmediatamente en la lista se indicará el plugin que fue guardado por un _check_ y a su véz emergerá un mensaje que le notificará al usuario que fue exitosamente guardado. Los plugins no guardados se identifican por un _dot_.
-- También se podrá eliminar los plugin, a través de un botón, que al clickearlo se desplegará un mensaje de confirmación para eliminar, en donde podrá confirmar la eliminación o cancelarla.
+- Al elegir los plugins, aparecerán de manera simultánea en una lista por orden de selección. Al clickear cada plugin seleccionado en la lista, siguiendo la dinámica de un tab, aparecerá la información correspondiente de cada plugin, en donde se podrá ingresar los datos; estos podrán ser guardados al clickear el botón _Save_, en donde inmediatamente en la lista se indicará el plugin que fue guardado por un _check_ y a su véz emergerá un mensaje que le notificará al usuario que fue exitosamente guardado. Los plugins no guardados se identifican por un _dot_.  
+- También se podrá eliminar los plugin, a través de un botón, que al clickearlo se desplegará un mensaje de confirmación para eliminar, en donde podrá confirmar la eliminación o cancelarla. 
 - Una vez guardados todos los plugins se crea y visualiza la orquestación al clickear el botón _create_, con opción a descargar en formato YAML.
 
 ## 8. Tecnologías
 
-- React.js.
-- Javascript ES6.
-- Bootstrap 5.
+* React.js.
+* Javascript ES6.
+* Bootstrap 5.
+* Libreria js-yaml.
+* HTML5.
+* CSS.
 
 ## 9. Enlace web

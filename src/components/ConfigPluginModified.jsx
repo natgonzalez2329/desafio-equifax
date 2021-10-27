@@ -15,7 +15,7 @@ const ConfigPluginModified = ({
   const [modalDelete, setModalDelete] = useState(false);
 
   const typeValue = (key, value, index, title) => {
-    if (typeof value === "string" || typeof value === "number") {
+    if (typeof value === 'string' || typeof value === 'number') {
       return (
         <div>
           <div className="form-row">
@@ -72,12 +72,12 @@ const ConfigPluginModified = ({
     } else {
       const keysPluginSelect = Object.keys(pluginSelectModified);
       keysPluginSelect.forEach((key) => {
-        if (key === "config") {
+        if (key === 'config') {
           const keysConfigObj = Object.keys(pluginSelectModified[key]);
           keysConfigObj.forEach((keyConfig) => {
-            const paramConfig = pluginSelectModified["config"][keyConfig];
+            const paramConfig = pluginSelectModified['config'][keyConfig];
             if (keyConfig === name) {
-              pluginSelectModified["config"][keyConfig] = valueParam;
+              pluginSelectModified['config'][keyConfig] = valueParam;
             } else {
               if (Array.isArray(paramConfig)) {
                 paramConfig.forEach((obj, index) => {
@@ -101,7 +101,7 @@ const ConfigPluginModified = ({
                     paramConfig[d] = valueParam;
                   }
                   config = {
-                    ...pluginSelectModified["config"],
+                    ...pluginSelectModified['config'],
                     ...{ [keyConfig]: paramConfig },
                   };
                 });
@@ -238,7 +238,7 @@ const ConfigPluginModified = ({
                     name="mainClass"
                     value={pluginSelect.mainClass}
                     onChange={handleInputChange}
-                    disabled
+                    readOnly
                   />
                 </div>
               </div>

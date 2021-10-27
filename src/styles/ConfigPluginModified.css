@@ -64,7 +64,6 @@ input {
   width: 800px;
   border: none;
 }
-
 .containerPrintYaml {
   background-color: rgba(85, 85, 85, 1);
   overflow-x: auto;
