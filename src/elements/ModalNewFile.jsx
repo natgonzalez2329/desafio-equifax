@@ -1,13 +1,13 @@
-import React from 'react'
-import '../styles/Modals.css'
+import React from 'react';
 
-const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setListPlugin }) => {
+const ModalNewFile = ({ closeModal, setListPlugin, setPlugin, setOrchestration, setPreview }) => {
 
-  const deletePlugin = (uid) => {
-    const pluginListRemoved = listPlugin.filter((plugin) => plugin.uid !== uid);
+  const newOrchestration = () => {
+    setListPlugin([]);
     setPlugin(0);
-    setListPlugin(pluginListRemoved);
-    closeModal(false);
+    setOrchestration([]);
+    setPreview(true);
+    closeModal(false)
   };
 
   return (
@@ -20,10 +20,11 @@ const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setLis
                 <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
               </svg>
             </span>
-            <h3 className="text-center">Do you want to delete this plugin?</h3>
+            <h3 className="text-center">This orchestration will be permanently deleted!</h3>
+            <small className="text-center d-flex justify-content-center'">Are you sure to continue?</small>
             <div className='modal__footer d-flex justify-content-center'>
               <button className="btn btn-outline-light me-md-2" onClick={() => closeModal(false)}>CANCEL</button>
-              <button className="btn btn-danger" style={{ backgroundColor:  "#007298" }} onClick={() => deletePlugin(pluginSelectId)}>DELETE</button>
+              <button className="btn btn-danger" style={{ backgroundColor:  "#007298" }} onClick={() => newOrchestration()}>NEW FILE</button>
             </div>
           </div>
         </div>
@@ -32,4 +33,4 @@ const ModalDelete = ({ closeModal, pluginSelectId, listPlugin, setPlugin, setLis
   )
 }
 
-export default ModalDelete
+export default ModalNewFile

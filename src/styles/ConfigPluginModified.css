@@ -1,0 +1,82 @@
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+form-row > .col,
+.form-row > [class*="col-"] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+input {
+  background-color: #eee;
+  border-radius: 3px;
+  height: 40px;
+}
+
+.inputConfig {
+  background-color: #eee;
+  border-radius: 80px;
+  height: 40px;
+}
+
+.selectDependencies {
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.buttonSave {
+  background-color: #007298;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 90px;
+}
+.buttonSave:hover {
+  background-color: white;
+  color: #007298;
+  border: 2px solid #007298;
+  font-weight: bold;
+}
+.btn-trash {
+  color: white;
+  background-color: #007298;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+}
+.containerConfig {
+  background-color: rgba(36, 35, 41, 1);
+  overflow: auto;
+  height: 550px;
+  width: 500px;
+  border: none;
+}
+.containerPrintYaml {
+  background-color: rgba(85, 85, 85, 1);
+  overflow-x: auto;
+  height: 550px;
+  width: 650px;
+  margin: 80px;
+  padding-top: 50px;
+  padding-left: 80px;
+}
+.buttonDownload {
+  color: white;
+  background-color: #007298;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+}
+.containerYamlDownload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

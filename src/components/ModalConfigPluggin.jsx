@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
   return (
@@ -6,6 +6,7 @@ const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
       {listPlugin.map((pluggin) => {
         return (
           <button
+            className="buttonList"
             type="button"
             key={pluggin.uid}
             data-tag={pluggin.uid}
@@ -30,8 +31,8 @@ const ModalConfigPluggin = ({ listPlugin, filterPluggin }) => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="25"
+                  height="25"
                   fill="currentColor"
                   className="bi bi-dot"
                   viewBox="0 0 16 16"
