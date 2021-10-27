@@ -75,7 +75,7 @@ function App() {
               setOrchestration={setOrchestration}
             />
           </div>
-          <div className="col-6 d-flex justify-content-center">
+          <div className="col-6">
             <FormsPreview
               pluginSelect={pluginSelect}
               setPlugin={setPlugin}

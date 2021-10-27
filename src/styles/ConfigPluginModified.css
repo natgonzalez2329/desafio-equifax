@@ -52,21 +52,28 @@ input {
   border: none;
   border-radius: 50px;
 }
+.contentConfig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .containerConfig {
   background-color: rgba(36, 35, 41, 1);
   overflow: auto;
   height: 550px;
-  width: 500px;
+  width: 800px;
   border: none;
 }
+
 .containerPrintYaml {
   background-color: rgba(85, 85, 85, 1);
   overflow-x: auto;
-  height: 550px;
+  height: 450px;
   width: 650px;
   margin: 80px;
   padding-top: 50px;
   padding-left: 80px;
+  padding-bottom: 50px;
 }
 .buttonDownload {
   color: white;
@@ -74,6 +81,8 @@ input {
   padding: 15px;
   border: none;
   border-radius: 30px;
+  position: fixed;
+  bottom: 5em;
 }
 .containerYamlDownload {
   display: flex;
