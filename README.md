@@ -35,13 +35,12 @@ Los adaptadores podrían requerir una cantidad diferente de parámetros. Estos p
 
 El proceso declarado anteriormente entrega como resultado un archivo YAML, el cual contiene parámetros y configuración definida por el usuario.
 
-## Diagrama representando el flujo completo del cliente
+## Diagrama de ejecución
+![diagrama-equifax](./src/assets/Diagrama-Equifax.png)
+
+## Diagrama representando el flujo completo del usuario
 
 ![diagrama-equifax](./src/assets/diagrama-equifax.jpeg)
-
-## Ejemplo de la metadata YAML para un adaptador
-
-![metadata](./src/assets/metadata.jpeg)
 
 ## 3. Perfil de usuario
 
@@ -109,10 +108,7 @@ En base a la interfaz de Equifax, se jugo con la paleta de colores original, en 
 
 El color burdeo que resalta en el _header_ el logo de Equifax, característico de la página oficial de la empresa. El blanco se denota en el texto de toda la página en contraste con el fondo, de fácil lectura. Y por último los botones azules también característico de la página oficial.
 
-### Prototipo de baja fidelidad.
-
-### Prototipo de alta fidelidad.
-
+[Ver Prototipo de alta fidelidad-Figma](https://www.figma.com/proto/bO0pvyFSlB6qBwC5jsca4i/EQUIFAX?node-id=0%3A1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=107%3A2)
 ## 6. Interfaz
 
 ## 7. Modo de usuario
@@ -126,5 +122,7 @@ El color burdeo que resalta en el _header_ el logo de Equifax, característico d
 * React.js.
 * Javascript ES6.
 * Bootstrap 5.
-
+* Libreria js-yaml.
+* HTML5.
+* CSS.
 ## 9. Enlace web
