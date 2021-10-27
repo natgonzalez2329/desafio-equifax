@@ -9,7 +9,6 @@ const ModalDelete = ({
   setListPlugin,
 }) => {
   const deletePlugin = (uid) => {
-    console.log(pluginSelectId);
     const pluginListRemoved = listPlugin.filter((plugin) => plugin.uid !== uid);
     setPlugin(0);
     setListPlugin(pluginListRemoved);
@@ -39,13 +38,13 @@ const ModalDelete = ({
             <h3 className="text-center">Do you want to delete this plugin?</h3>
             <div className="modal__footer d-flex justify-content-center">
               <button
-                className="btn btn-outline-light me-md-2  "
+                className="btn btn-outline-light me-md-2"
                 onClick={() => closeModal(false)}
               >
                 CANCEL
               </button>
               <button
-                className="btn btn-danger cancelButton"
+                className="btn btn-danger"
                 onClick={() => deletePlugin(pluginSelectId)}
               >
                 DELETE

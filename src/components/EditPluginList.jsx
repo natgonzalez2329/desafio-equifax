@@ -24,11 +24,13 @@ const EditPluginList = ({
   return (
     <div className="listColEdit mt-3 mb-3">
       <h4>Plugin List</h4>
-      <button onClick={() => newOrchestration()}>New orchestration</button>
+      <button className="btnNewOrch" onClick={() => newOrchestration()}>
+        + new file
+      </button>
       <div className="list-group-item m-2 text-white bgItems">
         {listPlugin.length === 0 ? (
           <h3 className="text-center fst-italic text-white-50 m-4 p-3">
-            + Add a new plugin.
+            Add a new plugin.
           </h3>
         ) : (
           <ModalConfigPluggin

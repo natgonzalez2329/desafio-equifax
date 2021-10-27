@@ -37,3 +37,10 @@
   background: rgba(238, 238, 238, 1);
   color: black;
 }
+.btnNewOrch {
+  background-color: rgba(255, 255, 255, 0);
+  color: #009bcf;
+  border: none;
+  width: 100px;
+  height: 30px;
+}
