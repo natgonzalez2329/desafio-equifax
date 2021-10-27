@@ -110,6 +110,9 @@ El color burdeo que resalta en el _header_ el logo de Equifax, característico d
 [Ver Prototipo de alta fidelidad-Figma](https://www.figma.com/proto/bO0pvyFSlB6qBwC5jsca4i/EQUIFAX?node-id=0%3A1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=107%3A2)
 ## 6. Interfaz
 
+![interfaz](./src/assets/interfaz1.jpeg)
+![interfaz](./src/assets/interfaz2.jpeg)
+
 ## 7. Modo de usuario
 
 - Al ingresar a la plataforma, a través del menú dropdown que a su vez posee un search box, podrá seleccionar o hacer la búsqueda específica de las diferentes opciones de plugins.

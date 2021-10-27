@@ -23,7 +23,7 @@
 .bgItems {
   background-color: rgba(36, 35, 41, 1);
   overflow: auto;
-  height: 450px;
+  height: 550px;
   width: min-content;
   border: none;
 }

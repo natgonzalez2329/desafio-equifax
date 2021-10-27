@@ -24,3 +24,16 @@
   display: flex;
   justify-content: center;
 }
+.newFile{
+  height: 13em;
+}
+.buttonNewFile{
+  background-color: #007298;
+  color: white;
+}
+.buttonNewFile:hover {
+  background-color: white;
+  color: #007298;
+  border: 2px solid #007298;
+  font-weight: bold;
+}
