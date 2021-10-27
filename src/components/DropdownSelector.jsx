@@ -5,6 +5,7 @@ import "../styles/DropdownSelector.css";
 import { nanoid } from "nanoid";
 
 const DropdownSelector = ({ dataYamlJson, listPlugin, setListPlugin }) => {
+  
   const options = dataYamlJson.map((optionsPlugins) => {
     const pluginsName = optionsPlugins.stepName;
     const pluginsId = optionsPlugins.id;
