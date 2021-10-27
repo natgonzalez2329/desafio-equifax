@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/desafio-equifax/static/css/main.e412e738.chunk.css",
+    "main.js": "/desafio-equifax/static/js/main.55178cf3.chunk.js",
+    "main.js.map": "/desafio-equifax/static/js/main.55178cf3.chunk.js.map",
+    "runtime-main.js": "/desafio-equifax/static/js/runtime-main.7e8b66d2.js",
+    "runtime-main.js.map": "/desafio-equifax/static/js/runtime-main.7e8b66d2.js.map",
+    "static/js/2.f04ae1d9.chunk.js": "/desafio-equifax/static/js/2.f04ae1d9.chunk.js",
+    "static/js/2.f04ae1d9.chunk.js.map": "/desafio-equifax/static/js/2.f04ae1d9.chunk.js.map",
+    "index.html": "/desafio-equifax/index.html",
+    "static/css/main.e412e738.chunk.css.map": "/desafio-equifax/static/css/main.e412e738.chunk.css.map",
+    "static/js/2.f04ae1d9.chunk.js.LICENSE.txt": "/desafio-equifax/static/js/2.f04ae1d9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e8b66d2.js",
+    "static/js/2.f04ae1d9.chunk.js",
+    "static/css/main.e412e738.chunk.css",
+    "static/js/main.55178cf3.chunk.js"
+  ]
+}

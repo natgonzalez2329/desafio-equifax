@@ -1,0 +1,12 @@
+  - id: input-handler
+    dependencies: input
+    stepName: Client Input Handler
+    mainClass: com.company.namespace.InputHandler
+    config:
+      recordClass: com.company.data.client.laborafax
+      constants:
+        laborafax.UUID : "%GUUID%"
+      fields:
+        - mapping: laborafax.firstName
+          length: 20
+     

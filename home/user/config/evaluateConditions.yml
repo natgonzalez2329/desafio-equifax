@@ -1,0 +1,10 @@
+  - id: evaluate-conditions
+    dependencies: calculate-models
+    stepName: Evaluate Client Models
+    mainClass: com.company.namespace.EvaluateConditions
+    config:
+      recordClass: com.company.data.client.laborafax
+      evaluations:
+        - evalId: model
+          field: laborafax.calculated.predictedScore
+          threshold: 600

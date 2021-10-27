@@ -1,0 +1,7 @@
+com.company.namespace.inputHandler, /home/user/config/inputHandler.yml
+com.company.namespace.keyFinder, /home/user/config/keyFinder.yml
+com.company.namespace.dataEnricher, /home/user/config/dataEnricher.yml
+com.company.namespace.filterClients , /home/user/config/filterClients.yml
+com.company.namespace.calculateModels , /home/user/config/calculateModels.yml
+com.company.namespace.evaluateConditions , /home/user/config/evaluateConditions.yml
+com.company.namespace.outputHandler , /home/user/config/outputHandler.yml

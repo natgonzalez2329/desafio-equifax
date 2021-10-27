@@ -1,0 +1,10 @@
+  - id: filter-client
+    dependencies: data-enricher
+    stepName: filter clients with bad data
+    mainClass: com.company.namespace.FilterClients
+    config:
+      recordClass: com.company.data.client.laborafax
+      conditions:
+        condition1: laborafax.firstName == isEmpty
+        condition2: laborafax.address == isEmpty
+        condition3: laborafax.phone != isNumeric
