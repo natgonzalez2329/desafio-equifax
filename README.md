@@ -130,3 +130,4 @@ El color burdeo que resalta en el _header_ el logo de Equifax, característico d
 * CSS.
 
 ## 9. Enlace web
+![equifax](https://desafio-equifax-f2550.web.app)
